@@ -293,88 +293,33 @@ position: relative;
     fill:lightsteelblue;
 }
 
+
 /*ANIMATION*/
 
 .square, .circle, .line {
-  -webkit-animation: 7s crazy infinite;
-  animation: 7s crazy infinite;    
+ stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+  animation: dash 5s ease-in-out;
+  -webkit-animation: dash 5s ease-in-out;
 }
 
-@-webkit-keyframes line {
-  0% {
-    stroke-dasharray:0 600;
-    stroke-dashoffset: 10;
-  }
-  50% {
-    stroke-dasharray:600 0;
-  }
-  
-  100% {
-    stroke-dasharray:0 600;
-    stroke-dashoffset: 10;
-  }
+
+@-webkit-keyframes dash {
+ 0% {
+   stroke-dashoffset: 1000;
+ }
+ 100% {
+   stroke-dashoffset: 0;
+ }
 }
 
-@keyframes line {
-  0% {
-    stroke-dasharray:0 600;
-    stroke-dashoffset: 10;
-  }
-  50% {
-    stroke-dasharray:600 0;
-  }
-  100% {
-    stroke-dasharray:0 600; 
-    stroke-dashoffset: 10;
-  }
-}
-
-@-webkit-keyframes crazy {
-  0% {
-    stroke-dasharray:0 600;
-    stroke-dashoffset: 10;
-  }
-  
-  50% {
-    stroke-dasharray:600 0;
-  }
-  
-  70% {
-    stroke-dasharray:300 0;
-  }
-  
-  90% {
-    stroke-dasharray:0 300;
-  }
-  
-  100% {
-    stroke-dasharray:0 600; 
-    stroke-dashoffset: 10;
-  }
-}
-
-@keyframes crazy {
-  0% {
-    stroke-dasharray:0 600;
-    stroke-dashoffset: 10;
-  }
-  
-  50% {
-    stroke-dasharray:600 0;
-  }
-  
-  70% {
-    stroke-dasharray:300 0;
-  }
-  
-  90% {
-    stroke-dasharray:0 300;
-  }
-  
-  100% {
-    stroke-dasharray:0 600; 
-    stroke-dashoffset: 10;
-  }
+@keyframes dash {
+ 0% {
+   stroke-dashoffset: 1000;
+ }
+ 100% {
+   stroke-dashoffset: 0;
+ }
 }
 
 
