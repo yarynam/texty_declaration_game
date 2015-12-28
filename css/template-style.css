@@ -474,8 +474,8 @@ font-weight: bold;
   display: block;
   margin-left:auto;
   margin-right:auto;
-  margin-top: 5em;
 }
+
 input         {
   font-size:18px;
   padding:10px 10px 10px 5px;
@@ -568,7 +568,7 @@ input:focus ~ .highlight {
 .range-slider { color: #BABCBE; width: 350px; margin: -7px auto 40px; }
 .input-range { vertical-align: bottom; }
 
-.range-value { font-size: 36px; display: block; text-align: center; margin-top:15px;}
+.range-value { font-size: 16px; display: block; text-align: center; margin-top:10px;}
 
   /* CHROME */
   input[type=range]{
