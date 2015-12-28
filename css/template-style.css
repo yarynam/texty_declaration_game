@@ -378,19 +378,22 @@ font-weight: bold;
 }
 
 .dot {
-  stroke: #fff;
   opacity: 0.6;
 }
 
 .tooltip {
   position: absolute;
   width: 300px;
-  height: 28px;
+  height: 60px;
   pointer-events: none;
   background: #fff;
   padding: 2px;
 }
 
+.label {
+  font-size: 10px;
+  font-weight: normal;
+}
 
 /* ======== Footer ======== */
 

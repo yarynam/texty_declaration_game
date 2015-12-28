@@ -657,7 +657,7 @@
 <section id="tendency" class="hidden">
     <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12">
         <div id="graph_title">Низькі зарплати і дорогі машини</div>
-        <p>З зарплатами менше тисячі доларів українські чиновники купують автомобілі дорожчі ста тисяч доларів</p>
+        <p>Сім'ї чиновників, яким для придбання своїх машини довелося б накопичувати весь місячний заробіток більше 5 років </p>
         <div id="graph"></div>
     </div>
         <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12 last_button">
@@ -712,7 +712,7 @@ $('.iconB').width(bigicon);
 var backgroundHeight = $(window).height - 200;
 $(".background").height(backgroundHeight);
 
-  d3.json("https://dl.dropboxusercontent.com/u/82823005/game/final_data.json", function(data) {
+  d3.json("https://dl.dropboxusercontent.com/u/82823005/game/game_final.json", function(data) {
   var rand = data[Math.floor(Math.random() * data.length)];
   console.log(rand);
 
@@ -724,8 +724,8 @@ $(".background").height(backgroundHeight);
   var allEstate = rand.all_estate + " м²";
   var allCarsPrice = rand.all_cars_sum_uah_mln + " млн грн";
   var car = rand.cars_info;
-  var personalCarPrice = Math.round(rand.personal_cars_sum) + " дол";
-  var familyCarPrice = Math.round(rand.family_cars_sum) + " дол";
+  var personalCarPrice = Math.round(rand.personal_cars_sum_uah) + " тис. грн";
+  var familyCarPrice = Math.round(rand.family_cars_sum_uah) + " тис. грн";
   var carFamily = rand.cars_family_info;
   var bank = rand.bank_deps;
   var bankFamily = rand.bank_deps_family; 
@@ -771,6 +771,7 @@ String.prototype.capitalize = function() {
   $( "#main" ).removeClass("hidden");
   $("#personalhouse").append(realEstate);
   $("#familyhouse").append(realEstateFamily);
+
   $("#personalcar").append(car);
   if ( car == "" ) {
     $("#personalcar").text("немає");
@@ -896,13 +897,13 @@ var margin = {top: 20, right: 20, bottom: 30, left: 70},
  */ 
 
 // setup x 
-var xValue = function(d) { return d.cars_sum;}, // data -> value
+var xValue = function(d) { return d.all_cars_sum_uah;}, // data -> value
     xScale = d3.scale.linear().range([0, width]), // value -> display
     xMap = function(d) { return xScale(xValue(d));}, // data -> display
     xAxis = d3.svg.axis().scale(xScale).ticks(7).orient("bottom");
 
 // setup y
-var yValue = function(d) { return d.montly_salary;}, // data -> value
+var yValue = function(d) { return d.all_salary;}, // data -> value
     yScale = d3.scale.linear().range([height, 0]), // value -> display
     yMap = function(d) { return yScale(yValue(d));}, // data -> display
     yAxis = d3.svg.axis().scale(yScale).ticks(7).orient("left");
@@ -921,12 +922,12 @@ var tooltip = d3.select("body").append("div")
     .style("opacity", 0);
 
 // load data
-d3.csv("game_data.csv", function(error, data) {
+d3.csv("game1.csv", function(error, data) {
 
   // change string (from CSV) into number format
   data.forEach(function(d) {
-    d.cars_sum = +d.cars_sum;
-    d.montly_salary = +d.montly_salary;
+    d.all_cars_sum_uah = +d.all_cars_sum_uah
+    d.all_salary = +d.all_salary;
 //    console.log(d);
   });
 
@@ -944,7 +945,7 @@ d3.csv("game_data.csv", function(error, data) {
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
-      .text("загальна вартість авто");
+      .text("вартість машин сім'ї, грн");
 
   // y-axis
   svg.append("g")
@@ -956,35 +957,39 @@ d3.csv("game_data.csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("місячна зарплатня");
+      .text("місячна зарплатня сім'ї, грн");
+
+
 
   // draw dots
   svg.selectAll(".dot")
       .data(data)
     .enter().append("circle")
       .attr("class", "dot")
-      .attr("r", 5)
+      .attr("r", 4)
       .on("mouseover", function(d) {
           tooltip.transition()
                .duration(200)
                .style("opacity", .9);
-          tooltip.html(d.name + "<br/>" + "загальна вартість авто: " + xValue(d) 
-            + ", " + "<br>" + "загальна місячна зарплатня: "+ yValue(d) )
+          tooltip.html(d.name + "<br/>" + "вартість авто: " + "<strong>" + xValue(d) + "</strong>"
+            + ", " + "<br>" + "місячна з/п: "+"<strong>"+ yValue(d) + "</strong>")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
-      .on("mouseout", function(d) {
+      .on("mouseout", function(d) {  
           tooltip.transition()
                .duration(500)
                .style("opacity", 0);
       })
       .attr("cx", xMap)
       .attr("cy", yMap)
-      .style("fill", "#d9d9d9") 
+     .style("fill", function(d) {
+            if (d.all_salary * 60 < d.all_cars_sum_uah) {return "#2CA25F"}
+            else  { return "#DCDDDD" }
+        ;}) 
 
 
-});
-
+     ;}) 
 
 
 
