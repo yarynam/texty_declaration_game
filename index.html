@@ -387,32 +387,22 @@
     <br>
     <br>
     <div class="col-lg-12 col-md-12   col-sm-12   col-xs-12">
-        <button id='main_button'>
-            <span >Далі</span>
-        </button> 
-    </div> 
-</section>
-
-<section id="estimate" class="hidden">
-        <div class="col-lg-12 col-md-12  col-sm-12   col-xs-12 ">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2></h2>
-             <div class="group">     
+        <h2></h2>
+        <div class="group">     
                 <div class="range-slider">
                 <input class="input-range" type="range" min="0" value="5000" max="100000"/>
                 <span class="range-value"></span>
-            </div>
         </div>
-        <div class="col-lg-12 col-md-12  col-sm-12   col-xs-12 ">
-        <button id='estimate_button'>
+
+        <button id='main_button'>
             <span >Вгадати</span>
-        </button> 
-        </div>
+        </button>
+        <br>
+        <br>
+        <br>
+    </div> 
 </section>
+
 
 <section id="result" class="hidden">
     <div class="row">
@@ -755,10 +745,6 @@ String.prototype.capitalize = function() {
     else {
     $("#familymoney").append(bank);
     }
-
-  $( "#main_button" ).click(function() {
-  $( "#main" ).remove();
-  $( "#estimate" ).removeClass("hidden");
   if ( lastChar == "ч") {
     $("h2").text("Скільки на вашу думку заробляє цей чиновник?");
     }
@@ -766,8 +752,8 @@ String.prototype.capitalize = function() {
     $("h2").text("Скільки на вашу думку заробляє ця чиновниця?");
     }
 
-  $( "#estimate_button" ).click(function() {
-  $( "#estimate" ).remove();
+  $( "#main_button" ).click(function() {
+  $( "#main" ).remove();
   $( "#result" ).removeClass("hidden");
   if ( range.prop('value') <= bigGuess && range.prop('value') >= smallGuess ) {
     $("#right_answer").removeClass("hidden");
@@ -818,8 +804,6 @@ $("#new_game_button2").click(function() {
   });
   
   });
-
-  }); 
 
   }); 
 

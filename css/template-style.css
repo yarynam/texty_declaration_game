@@ -46,7 +46,7 @@ h2 {
  font: 300 18px/24px "Open sans";
  padding-left: 5em;
  padding-right: 5em;
- margin: 0px 0px 16px;
+ margin: 0px 0px 10px;
  text-align: center;
 }
 
@@ -55,7 +55,7 @@ h3 {
  font: 24px/35px "Open Sans";
  font-weight: bold;
  color: #2CA25F;
- margin: -10px 0px 16px;
+ margin: -10px 0px 0px;
  text-align: center;
 }
 
