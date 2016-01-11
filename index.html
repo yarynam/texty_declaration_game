@@ -55,8 +55,8 @@
 <section id="about" class="about">
     <div class="container-fluid">
         <div id="main" class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3  col-sm-6 col-sm-offset-3  col-xs-6 col-xs-offset-3 ">
-            <h1 class="margin_top"> БАГАТІ ЧИ БІДНІ?  </h1>
-            <h2> дізнайся як живуть держслужбовці </h2>
+            <h1 class="margin_top"> Гроші, метри, два авта </h1>
+            <h2> Вгадай місячну зарплатню чиновника за його статками</h2>
             <div id ="money">
             <svg version="1.1" id="Layer_1" class="icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
@@ -271,15 +271,14 @@
 <h3>Нерухомість</h3>
 </div>
 <div class="col-lg-12 col-md-12   col-sm-12   col-xs-12 ">
-<div class="title"> Особиста властність</div>
-<div id="personalhouse" class="data_main"></div>
+<div id="personalhouse" class="data_main"> Особиста власність: <span id="pflat"></span> <span id="phouse"></span> </div>
 </div>
 <br>
 <br>
 <br>
 <div class="col-lg-12 col-md-12   col-sm-12   col-xs-12 ">
-<div class="title"> Власність сім'ї</div>
-<div id="familyhouse" class="data_main"></div>
+<div id="familyhouse" class="data_main">Власність сім'ї: <span id="fflat"></span> <span id="fhouse"></span> </div>
+<div id="noestate" class="data_main"></div>
 </div>
             </div>
             <div class="col-lg-4 col-md-4   col-sm-4   col-xs-4 ">
@@ -315,16 +314,15 @@
 <h3>Машини</h3>
 </div>
 <div class="col-lg-12 col-md-12   col-sm-12   col-xs-12 ">
-    <div class="title"> Особиста власність </div>
-    <div id="personalcar"class="data_main"></div>
+    <div id="personalcar"class="data_main">Особиста власність: </div>
 </div>
 <br>
 <br>
 <br>
 <br>
 <div class="col-lg-12 col-md-12   col-sm-12   col-xs-12 ">
-    <div class="title"> Власність сім'ї</div>
-    <div id="familycar" class="data_main"></div>
+    <div id="familycar" class="data_main">Власність сім'ї: </div>
+    <div id="nocar" class="data_main"></div>
 </div>
                  </div>
 
@@ -371,15 +369,14 @@
 <h3>Депозити</h3>
 </div>
 <div class="col-lg-12 col-md-12   col-sm-12   col-xs-12 ">
-    <div class="title"> Особисті </div>
-    <div id="personalmoney" class="data_main"></div>
+    <div id="personalmoney" class="data_main">Особисті: </div>
 </div>
 <br>
 <br>
 <br>
 <div class="col-lg-12 col-md-12   col-sm-12   col-xs-12 ">
-    <div class="title"> Належать членам сім'ї</div>
-    <div id="familymoney" class="data_main"></div>
+    <div id="familymoney" class="data_main">Належать сім'ї: </div>
+    <div id="nomoney" class="center hidden">Немає</div>
 </div>
                  </div>
             </div>
@@ -387,20 +384,24 @@
     <br>
     <br>
     <div class="col-lg-12 col-md-12   col-sm-12   col-xs-12">
-        <h2></h2>
+        <h2 id="title_slider" class="bold"></h2>
         <div class="group">     
                 <div class="range-slider">
-                <input class="input-range" type="range" min="0" value="5000" max="100000"/>
+                <input class="input-range" type="range" min="0" value="0" max="100000"/>
                 <span class="range-value"></span>
-        </div>
+                <span class="final-value"></span>
 
+        </div>
         <button id='main_button'>
-            <span >Вгадати</span>
+            <span>Вгадати</span>
         </button>
         <br>
         <br>
         <br>
+    </div>
     </div> 
+    <div class="note">*вартість машин вираховувалась згідно з середнім курсом долара у 2014 році</div>
+
 </section>
 
 
@@ -587,8 +588,8 @@
         <div class="col-lg-4 col-md-4  col-sm-4   col-xs-4">
             <div  class="result_data margin_topx2 ">Власник статків, які ви щойно переглянули - <span id="character_name" class="bold"></span> <span id="character_position"></span><span id="character_gender1"></span> місячна зарплата в 2014 році становила: <br> <span id="salary"></span></div>
 
-            <div class="result_data margin_top "> При загальній площі житла в <span id="character_property" class="bold"></span>  і загальній вартості машин в <span id="character_car_price" class="bold"></span><span id="character_gender2"></span> щомісяця заробляє <span id="character_salary_family" class="bold"></span> </div>
-            <div class="result_data "> Рівень: <span id="character_property" class="bold">Супереконом</span> </div>
+            <div class="result_data margin_top "> При сумарному щомісячному заробітку у <span id="character_salary_family" class="bold"></span> <span id="character_gender2"></span> з родиною придбали у власність <span id="character_property" class="bold"></span> й авто на суму  <span id="character_car_price" class="bold"></span>. </div>
+            <div class="result_data"> Рівень: <span id="character_level"></span> </div>
             <div id="declaration">Оригінал декларації можна переглянути <a href="" id="declaration_link" class="dotted">тут</a></div>
         </div>
     </div>
@@ -662,17 +663,20 @@ $('.iconB').width(bigicon);
 var backgroundHeight = $(window).height - 200;
 $(".background").height(backgroundHeight);
 
-  d3.json("https://dl.dropboxusercontent.com/u/82823005/game/game_final.json", function(data) {
+  d3.json("https://dl.dropboxusercontent.com/u/82823005/game/game3.json", function(data) {
   var rand = data[Math.floor(Math.random() * data.length)];
   console.log(rand);
 
 
   var name1 = rand.name;
   var lastChar = name1.substr(name1.length - 1); // needed in order to know the gender
-  var realEstate = rand.flat_area + " м² квартири " + "та " + rand.house_area + " м² будинку" ;
-  var realEstateFamily = rand.flat_area_family + " м² квартири " + "та " + rand.house_area_family + " м² будинку" ;
+  var realEstateFlat = rand.flat_area; 
+  var realEstateHouse = rand.house_area;
+  var realEstateFamilyFlat = rand.flat_area_family;
+  var realEstateFamilyHouse = rand.house_area_family;
   var allEstate = rand.all_estate + " м²";
   var allCarsPrice = rand.all_cars_sum_uah_mln + " млн грн";
+  var allCarsPriceUAH = rand.all_cars_sum_uah;
   var car = rand.cars_info;
   var personalCarPrice = Math.round(rand.personal_cars_sum_uah) + " тис. грн";
   var familyCarPrice = Math.round(rand.family_cars_sum_uah) + " тис. грн";
@@ -683,6 +687,7 @@ $(".background").height(backgroundHeight);
   var bigGuess = salary/100*130;
   var smallGuess = salary/100*70;
   var salaryFamily = rand.all_salary + " грн";
+  var salaryFamilyUAH = rand.all_salary;
   var position = rand.position;
   var str1 = "http://declarations.com.ua/declaration/"
   var link = str1.concat(rand.id);
@@ -691,11 +696,7 @@ $(".background").height(backgroundHeight);
 String.prototype.capitalize = function() {
     return this.charAt(0).toLowerCase() + this.slice(1);
 }
-
-  var positionLowerLatter = position.capitalize(); 
-
-
-  // $("#character_position").contents().capitalize();
+var positionLowerLatter = position.capitalize(); 
 
 
     
@@ -714,70 +715,157 @@ String.prototype.capitalize = function() {
   $( "#introduction_button" ).click(function() {
   $( "#introduction" ).remove();
   $( "#main" ).removeClass("hidden");
-  $("#personalhouse").append(realEstate);
-  $("#familyhouse").append(realEstateFamily);
+ 
+  if ( realEstateFlat > 0 ) {
+    $("#pflat").append('<span class="bold">' + realEstateFlat + " м²" +'</span>' + " квартири ");
+    } 
+  if ( realEstateHouse > 0 ) {
+    $("#phouse").append('<span class="bold">' + realEstateHouse + " м²" +'</span>' + " будинку");
+    } 
+  if (realEstateFlat > 0 && realEstateHouse > 0) {
+     $("#pflat").append(" та ");
+  }
+  if (realEstateFlat == 0 && realEstateHouse == 0) {
+     $("#personalhouse").remove();
+  }
+
+ if ( realEstateFamilyFlat > 0 ) {
+    $("#fflat").append('<span class="bold">' + realEstateFamilyFlat + " м²" +'</span>' + " квартири");
+    } 
+ if (realEstateFamilyHouse > 0 ) {
+    $("#fhouse").append('<span class="bold">' + realEstateFamilyHouse + " м²" +'</span>' + " будинку");
+    }
+ if (realEstateFamilyFlat > 0 && realEstateFamilyHouse > 0) {
+     $("#fflat").append(" та ");
+  } 
+ if (realEstateFamilyFlat == 0 && realEstateFamilyHouse == 0) {
+     $("#familyhouse").remove();
+  }
+
 
 
   if ( car == "" ) {
-    $("#personalcar").text("немає");
+    $("#personalcar").remove();
     }
     else {
     $("#personalcar").append(car  + '<br>' + "приблизна ціна: " + '<span class="bold">' + personalCarPrice +'</span>' );
     } 
 
   if ( carFamily == "" ) {
-    $("#familycar").text("немає");
+    $("#familycar").remove();
     }
     else {
     $("#familycar").append( carFamily  + '<br>' + "приблизна ціна: " + '<span class="bold">' + familyCarPrice +'</span>' );
     }
 
-  if ( bank == 0 ) {
-    $("#personalmoney").text("немає");
+  if ( bank == 0.0 ) {
+    $("#personalmoney").remove();
     }
     else {
-    $("#personalmoney").append(bank);
+    $("#personalmoney").append('<span class="bold">' + bank + '</span>'  + " грн");
     }
   
-  if ( bankFamily == 0 ) {
-    $("#familymoney").text("немає");
+  if ( bankFamily == 0.0 ) {
+    $("#familymoney").remove();
     }
     else {
-    $("#familymoney").append(bank);
+    $("#familymoney").append('<span class="bold">' + bankFamily + '</span>'  + " грн");
     }
+
+  if ( bankFamily == 0.0  && bank == 0.0) {
+    $("#nomoney").removeClass("hidden");
+    }
+
+
   if ( lastChar == "ч") {
     $("h2").text("Скільки на вашу думку заробляє цей чиновник?");
     }
     else {
     $("h2").text("Скільки на вашу думку заробляє ця чиновниця?");
     }
+ 
+   range.on('input', function(){ 
+        var liveVal = range.prop('value')
+        value.html(liveVal + " грн");
+   
+  //Answer text 
+  if (liveVal / salary > 1) {
+    guessDif = Math.round(liveVal/salary*100)/100;
+    if (guessDif >= 2) {
+        var answerText = "Реальна сума в " + Math.round(guessDif*10)/10 + " раз менша" ;
+    }
+    else {
+        var answerText = "Реальна сума на " + Math.round((guessDif-1)*100) + "% менша" ;
+    }
+  }
+  else if (liveVal / salary < 1) {
+    guessDif = Math.round(salary/liveVal*100)/100;
+    // var answerText = "більша" ;
+    if (guessDif >= 2) {
+        var answerText = "Реальна сума в " + Math.round(guessDif*10)/10 + " раз більша" ;
+    }
+    else {
+        var answerText = "Реальна сума на " + Math.round((guessDif-1)*100) + "% більша" ;
+    }
+  }
+  else {
+    guessDif = 1;
+    var answerText = "Вгадали!" ;
+  }
+   
 
-  $( "#main_button" ).click(function() {
-  $( "#main" ).remove();
-  $( "#result" ).removeClass("hidden");
-  if ( range.prop('value') <= bigGuess && range.prop('value') >= smallGuess ) {
-    $("#right_answer").removeClass("hidden");
-    $("#result_message").text("Вірно! Ви майже вгадали!");
-    }
-    else {
-    $("#wrong_answer").removeClass("hidden"); 
-    $("#result_message").text("Неправильно! Спробуйте ще раз!");
-    }
-   $("#character_name").text(name1 + ", ");
-   $("#character_position").text(positionLowerLatter);
-   $("#character_property").text(allEstate);
-   $("#character_car_price").text(allCarsPrice);
-   $("#character_salary_family").text(salaryFamily);
-   $("#declaration_link").attr("href", link);
-   if ( lastChar == "ч") {
-    $("#character_gender1").text(". Його");
-    $("#character_gender2").text(", сім'я цього чиновника");
-    }
-    else {
-    $("#character_gender1").text(". Її");
-    $("#character_gender2").text(", сім'я цієї чиновниці");
-    }
-   $("#salary").text(salary + " грн");
+// Result icon
+if ( liveVal <= bigGuess && liveVal >= smallGuess ) {
+   $("#right_answer").removeClass("hidden");
+   $("#wrong_answer").addClass("hidden"); 
+   $("#result_message").text("Вгадали! "  + answerText);
+   }
+else {
+   $("#wrong_answer").removeClass("hidden");
+   $("#right_answer").addClass("hidden"); 
+   $("#result_message").text("Не вгадали! " + answerText);
+   }
+
+    });
+
+$( "#main_button" ).click(function() {
+$( "#main" ).remove();
+$( "#result" ).removeClass("hidden");
+$("#character_name").text(name1 + ", ");
+$("#character_position").text(positionLowerLatter);
+$("#character_property").text(allEstate);
+$("#character_car_price").text(allCarsPrice);
+$("#character_salary_family").text(salaryFamily);
+$("#declaration_link").attr("href", link);
+
+
+
+//Text
+if ( lastChar == "ч") {
+  $("#character_gender1").text(". Його");
+  $("#character_gender2").text(", чиновник");
+}
+else {
+  $("#character_gender1").text(". Її");
+  $("#character_gender2").text(", чиновниця");
+}
+$("#salary").text(salary + " грн");
+
+//character level
+var salDiff = Math.round(allCarsPriceUAH / salaryFamilyUAH);
+if ( salDiff <= 36 ) {
+    $("#character_level").append("<strong>Живе на одну зарплатню</strong>");
+}
+else if ( salDiff <= 60) {
+     $("#character_level").append("<strong>Економ</strong>" +" (може не їсти тижнями)");
+}
+else if ( salDiff <= 84) {
+     $("#character_level").append("<strong>Супер-економ</strong>" + " (може не їсти роками)");
+}
+else if ( salDiff >= 85) {
+     $("#character_level").append("<strong>Шаман</strong>" + " (створює матеріальні цінності силою думки)");
+}
+
    
    $('#tendency_button').click(function() {
     $( "#result" ).remove();
@@ -786,8 +874,8 @@ String.prototype.capitalize = function() {
     .attr("cx", 0)
       .attr("cy", yMap)
       .transition()
-      .duration(1000)
-      .delay(function(d, i) { return i * 10; })
+      .duration(1500)
+      .delay(function(d, i) { return i * 50; })
       .attr("cx", xMap)
       .attr("cy", yMap)
 
@@ -798,7 +886,6 @@ String.prototype.capitalize = function() {
 
 $("#new_game_button2").click(function() {
     location.reload();
-   
   });
 
   });
@@ -813,11 +900,9 @@ $("#new_game_button2").click(function() {
    
    $('#new_game_button').click(function() {
     location.reload();
-
-
   });
 
-// =========== ScatterPlot ============//
+//=========== ScatterPlot ============//
 
     
 var chwidth = $(window).width()*0.5;
@@ -859,7 +944,7 @@ var tooltip = d3.select("body").append("div")
     .style("opacity", 0);
 
 // load data
-d3.csv("game1.csv", function(error, data) {
+d3.csv("game2.csv", function(error, data) {
 
   // change string (from CSV) into number format
   data.forEach(function(d) {
@@ -921,93 +1006,44 @@ d3.csv("game1.csv", function(error, data) {
       .attr("cx", xMap)
       .attr("cy", yMap)
      .style("fill", function(d) {
-            if (d.all_salary * 60 < d.all_cars_sum_uah) {return "#2CA25F"}
-            else  { return "#DCDDDD" }
+            if (d.all_salary * 60 < d.all_cars_sum_uah) {return "#f46d43"}
+            else  { return "#7FDCA7" }
         ;}) 
 
 
+var text = svg.append("text")
+              .attr("x", function(d) { return xScale(3390000) })
+              .attr("y", function(d) { return yScale(90000) })
+              .text( "ймовірні корупціонери")
+              .attr("class", "label")
+              .attr("fill", "#383E47")
+
+
+var legend = svg.append("circle")
+              .attr("cx", function(d) { return xScale(3350000) })
+              .attr("cy", function(d) { return yScale(90550) })
+              .attr("r", 3)
+              .attr("fill", "#f46d43")
+
      ;}) 
 
-
-
-// =============== Random dollars 
-
-var randomX,
-    randomY,
-    randomSize,
-    windowWidth;
-
-windowWidth = $(window).width();
-windowWidth -= 39;
-console.log(windowWidth);
-
-for (var i = 0; i < 35; i ++ ) {
-randomX = 20 + Math.floor((Math.random() * windowWidth));
-randomY = 30 + Math.floor((Math.random() * 1200));
-randomSize = Math.floor((((Math.random() * .9) + .5) * 100 )) / 100;
-
-$('#background').append('<use class="star" xlink:href="#dollar" x="'+randomX+'" y="'+randomY+'" transform="scale('+randomSize+')" " />'); 
-}
-
-$('#background').html($('#background').html());
-
-
-for (var i = 0; i < 25; i ++ ) {
-randomX2 = 20 + Math.floor((Math.random() * windowWidth));
-randomY2 = 20 + Math.floor((Math.random() * 361));
-randomSize2 = Math.floor((((Math.random() * .9) + .5) * 100 )) / 100;
-
-$('#background2').append('<use class="star" xlink:href="#dollar2" x="'+randomX2+'" y="'+randomY2+'" transform="scale('+randomSize2+')" " />'); 
-}
-$('#background2').html($('#background2').html());
-
-
- function randomColor(){
-    
-    $( ".colorful" ).each(function(index) {
-        var back = ["#66c2a5", "#abdda4", "#fee08b", "#f46d43", "#d53e4f", "#2CA25F"];
-        var rand = back[Math.floor(Math.random() * back.length)];
-         $(this).css('fill',rand);
-         });
-}
-
-$(document).ready(function(){
-        randomColor();
-        var t = setInterval(randomColor,1000);
-    });
 
 
 /***** INPUT RANGE SLIDER WITH VALUE DISPLAYED *****/
     /* set variables */
     var range = $('.input-range'); /* range input */
     var value = $('.range-value'); /* range display */
+    var finalValue = $('.final-value'); 
+    
    
     /* set / display initial starting range value */
     var startingVal = range.prop('value')
     value.html(startingVal + " грн.");
     
     /* live update range value */
-
-    range.on('input', function(){ 
-        roundAmount() 
-    });
-    /* live update range value - IE */
-    range.on('change', function(){ 
-        roundAmount() 
-    });
+    var liveVal2 = range.prop('value');
     
-    var liveVal = range.prop('value')
-    // round number based on range amount //
-    function roundAmount() {
-        var liveVal = range.prop('value')
-         value.html(liveVal + " грн.");
-    }; 
     // END AMOUNT SLIDER JS //
-
-
-
-    
-
 
 
 
