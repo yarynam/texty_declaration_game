@@ -420,6 +420,9 @@ font-weight: bold;
     padding-top:5px;
 }
 
+.p1 {
+  margin-top: 5px;
+}
 .links li {
     color:#fff;
     font-size: 0.7em;
@@ -573,7 +576,7 @@ input:focus ~ .highlight {
 }
 
 /* RANGE SLIDER STYLES */
-.range-slider { color: #BABCBE; width: 350px; margin: -7px auto 40px; }
+.range-slider { color: #BABCBE; width: 350px; margin: -3px auto 40px; }
 .input-range { vertical-align: bottom; }
 
 .range-value { font-size: 16px; display: block; text-align: center; margin-top:10px;}
@@ -707,5 +710,26 @@ input:focus ~ .highlight {
 .links li {display:none;}
 .logo {margin-top: 15px;}
 .p2 {display: none;}
+h1 {font-size: 2.3em;}
+h2,
+#graph_title {font-size: 1.2em; padding-left: 0.5em; padding-right: 0.5em;}
+#Layer_1 {margin-top: -3em;}
+h3 {font-size: 1.5em; margin-top: -3em;}
+.data_main,
+.result_data,
+#declaration,
+p {font-size: 1em; line-height: 1.3em;}
+.range-slider {width: 200px;}
+input[type=range] {width: 200px;}
+input[type=range]::-webkit-slider-runnable-track {width: 200px;}
+input[type=range]::-moz-range-track {width: 200px;}
+.iconB {height: 23em}
+#salary {font-size: 2.5em;}
+#result_message {margin-top: -1em;}
+.margin_top,
+.margin_topx2 { margin-top: 1em;}
+#tendency_button {display: none;}
+.wrap {margin-bottom: 15em;}
+
 }
 
