@@ -400,7 +400,8 @@
         <br>
     </div>
     </div> 
-    <div class="note">*вартість машин вираховувалась згідно з середнім курсом долара у 2014 році</div>
+    <div class="note">*Вартість машин вираховувалась згідно з середнім курсом долара у 2014 році</div>
+    <div class="note">*Оцінена вартість машин може не співпадати із реальною. Перед цитуванням рекомендуємо перевірити її за допомогою інших джерел.</div>
 
 </section>
 
@@ -986,7 +987,7 @@ d3.csv("game2.csv", function(error, data) {
       .attr("x", width)
       .attr("y", -6)
       .style("text-anchor", "end")
-      .text("вартість машин сім'ї, грн");
+      .text("сукупна вартість машин, грн");
 
   // y-axis
   svg.append("g")
@@ -998,7 +999,7 @@ d3.csv("game2.csv", function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text("місячна зарплатня сім'ї, грн");
+      .text("сукупна місячна зарплатня, грн");
 
 
 
@@ -1013,7 +1014,7 @@ d3.csv("game2.csv", function(error, data) {
                .duration(200)
                .style("opacity", .9);
           tooltip.html(d.name + "<br/>" + "вартість авто: " + "<strong>" + xValue(d) + "</strong>"
-            + ", " + "<br>" + "місячна з/п: "+"<strong>"+ yValue(d) + "</strong>")
+            + "<br>" + "місячна з/п: "+"<strong>"+ yValue(d) + "</strong>")
                .style("left", (d3.event.pageX + 5) + "px")
                .style("top", (d3.event.pageY - 28) + "px");
       })
@@ -1034,15 +1035,15 @@ d3.csv("game2.csv", function(error, data) {
 
 
 var text = svg.append("text")
-              .attr("x", function(d) { return xScale(3390000) })
+              .attr("x", function(d) { return xScale(2590000) })
               .attr("y", function(d) { return yScale(90000) })
-              .text( "ймовірні корупціонери")
+              .text( "великий розрив між зарплатнею і вартістю машин")
               .attr("class", "label")
               .attr("fill", "#383E47")
 
 
 var legend = svg.append("circle")
-              .attr("cx", function(d) { return xScale(3350000) })
+              .attr("cx", function(d) { return xScale(2550000) })
               .attr("cy", function(d) { return yScale(90550) })
               .attr("r", 3)
               .attr("fill", "#f46d43")
