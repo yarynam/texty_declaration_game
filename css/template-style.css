@@ -78,7 +78,7 @@ p {
  text-transform: none;
  font: 18px/16px "Open Sans";
  margin: 7px 0px 3px;
- line-height: 24px; 
+ line-height: 24px;
 }
 
 .result_data {
@@ -124,11 +124,11 @@ p {
 .wrap {
   margin-top: 3em;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
 }
 
 .inline {
-  padding-left: 20px; 
+  padding-left: 20px;
 }
 
 .dotted {
@@ -141,8 +141,8 @@ p {
  text-transform: none;
  font: 18px/16px "Open Sans";
  margin: 7px 0px 3px;
- line-height: 24px; 
- text-align: center; 
+ line-height: 24px;
+ text-align: center;
 }
 
 .last_button{
@@ -233,7 +233,7 @@ button:hover{
 
  .active_line {
   -webkit-animation: 5s crazy infinite;
-  animation: 5s crazy infinite;    
+  animation: 5s crazy infinite;
 }
 
 @-webkit-keyframes line {
@@ -244,7 +244,7 @@ button:hover{
   50% {
     stroke-dasharray:600 0;
   }
-  
+
   100% {
     stroke-dasharray:0 600;
     stroke-dashoffset: 10;
@@ -260,7 +260,7 @@ button:hover{
     stroke-dasharray:600 0;
   }
   100% {
-    stroke-dasharray:0 600; 
+    stroke-dasharray:0 600;
     stroke-dashoffset: 10;
   }
 }
@@ -270,21 +270,21 @@ button:hover{
     stroke-dasharray:0 600;
     stroke-dashoffset: 10;
   }
-  
+
   50% {
     stroke-dasharray:600 0;
   }
-  
+
   70% {
     stroke-dasharray:300 0;
   }
-  
+
   90% {
     stroke-dasharray:0 300;
   }
-  
+
   100% {
-    stroke-dasharray:0 600; 
+    stroke-dasharray:0 600;
     stroke-dashoffset: 10;
   }
 }
@@ -294,28 +294,28 @@ button:hover{
     stroke-dasharray:0 600;
     stroke-dashoffset: 10;
   }
-  
+
   50% {
     stroke-dasharray:600 0;
   }
-  
+
   70% {
     stroke-dasharray:300 0;
   }
-  
+
   90% {
     stroke-dasharray:0 300;
   }
-  
+
   100% {
-    stroke-dasharray:0 600; 
+    stroke-dasharray:0 600;
     stroke-dashoffset: 10;
   }
 }
 
 
 
-/* ======== HEADER ======== */ 
+/* ======== HEADER ======== */
 
 .navbar {
     background-color: #eeeeee;
@@ -479,9 +479,9 @@ font-weight: bold;
 
 /*INPUT*/
 
-.group        { 
-  position:relative; 
-  margin-bottom:45px; 
+.group        {
+  position:relative;
+  margin-bottom:45px;
   display: block;
   margin-left:auto;
   margin-right:auto;
@@ -499,15 +499,15 @@ input:focus     { outline:none; }
 
 /* LABEL ======================================= */
 label          {
-  color:#999; 
+  color:#999;
   font-size:18px;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
   left:5px;
   top:10px;
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
 
@@ -572,7 +572,7 @@ input:focus ~ label, input:valid ~ label    {
   /* FIREFOX */
   input[type=range]{
      /* fix for FF unable to apply focus style bug  */
-     border: 0 solid white; 
+     border: 0 solid white;
 
      /*required for proper track sizing in FF*/
      width: 350px;
@@ -672,6 +672,7 @@ h1 {font-size: 2.3em;}
 h2,
 #graph_title {font-size: 1.2em; padding-left: 0.5em; padding-right: 0.5em;}
 #Layer_1 {margin-top: -3em;}
+#result_guess {margin-top: 1em;}
 h3 {font-size: 1.5em; margin-top: -3em;}
 .data_main,
 .result_data,
@@ -685,9 +686,10 @@ input[type=range]::-moz-range-track {width: 200px;}
 #salary {font-size: 2.5em;}
 #result_message {margin-top: -1em;}
 .margin_top,
-.margin_topx2 { margin-top: 1em;}
+.margin_topx2,
+#wrong_answer,
+#right_answer { margin-top: 2em;} 
 #tendency_button {display: none;}
 .wrap {margin-bottom: 15em;}
 
 }
-
